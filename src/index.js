@@ -4,19 +4,23 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './wiews/App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import rootReducer from "./stores/reducers/rootReducer";
+import { createStore, combineReducers } from 'redux';
+import userReducer from "./stores/reducers/rootReducer";
 
+// You can add many reducers at here
+const rootReducer = combineReducers({
+  user: userReducer,
+});
 const reduxStore = createStore(rootReducer);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <Provider store={reduxStore}>
-        <App />
-      </Provider>
-    </BrowserRouter>
-  </React.StrictMode>
+  <Provider store={reduxStore}>
+    <React.StrictMode>
+      <BrowserRouter>
+          <App />
+      </BrowserRouter>
+    </React.StrictMode>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function

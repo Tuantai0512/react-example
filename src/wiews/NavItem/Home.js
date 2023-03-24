@@ -1,18 +1,18 @@
 import { useDispatch, useSelector } from "react-redux";
-import { deleteUser } from "../../stores/reducers/rootReducer";
+import { deleteUser, createUser } from "../../stores/actions/userActions";
 import React from "react";
 
 
 
 function Home(){
     const dispatch = useDispatch();
-    const listUsersRedux = useSelector((state) => state.users);
+    const listUsersRedux = useSelector((state) => state.user.users);
     console.log(listUsersRedux);
     const handleDeleteUser = (user) => {
         dispatch(deleteUser(user))
     }
-    const handleCreateUser = (user) => {
-
+    const handleCreateUser = () => {
+        dispatch(createUser())
     }
         return(
             <>
@@ -21,11 +21,11 @@ function Home(){
                     {listUsersRedux && listUsersRedux.length > 0 &&
                         listUsersRedux.map((item, index) => {
                             return(
-                                <>
-                                    <h5 key={item.id}>{index + 1} {item.name} 
-                                    <span onClick={() => handleDeleteUser(item)}>X</span>
+                                <React.Fragment key={item.id}>
+                                    <h5 key={item.id}>{index + 1} {item.name} <br/>
+                                    <button onClick={() => handleDeleteUser(item)}>X</button>
                                     </h5>
-                                </>
+                                </React.Fragment>
                             )
                         })
                     }

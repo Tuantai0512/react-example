@@ -7,14 +7,7 @@ const initState = {
     ]
 }
 
-export const deleteUser = (user) => {
-  return {
-    type: 'DELETE_USER',
-    payload: user
-  }
-}
-
-const rootReducer = (state= initState, action) => {
+const userReducer = (state= initState, action) => {
     switch(action.type) {
         case 'DELETE_USER':
           let users = state.users;
@@ -34,4 +27,4 @@ const rootReducer = (state= initState, action) => {
     }
 }
 
-export default rootReducer
+export default userReducer

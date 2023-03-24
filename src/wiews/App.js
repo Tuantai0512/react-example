@@ -4,6 +4,7 @@ import './Todos/Todolist'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Nav from './Nav/nav';
+import { connect } from 'react-redux';
 
 function App() {
   return (
@@ -25,4 +26,4 @@ function App() {
   );
 }
 
-export default App;
+export default connect()(App);
