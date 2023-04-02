@@ -1,6 +1,6 @@
 import React from "react";
 import AddTodo from "./AddTodolist";
-import './Todolist.css';
+import '../Todos/Todolist.css';
 import { toast } from 'react-toastify';
 
 class Todolist extends React.Component  {
