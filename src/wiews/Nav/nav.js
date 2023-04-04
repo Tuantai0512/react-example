@@ -12,7 +12,7 @@ class Nav extends React.Component{
         return(
             <>
                 <ul>
-                    <li><NavLink to="/" activeClassName="active" exact={true}>Home</NavLink></li>
+                    <li><NavLink to="/" activeclassname="active" exact={`true`}>Home</NavLink></li>
                     <li><NavLink to="/todos">Todos</NavLink></li>
                     <li><NavLink to="/users">Users</NavLink></li>
                     <li><NavLink to="/covid-19">Covid-19</NavLink></li>

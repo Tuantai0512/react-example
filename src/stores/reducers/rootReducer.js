@@ -12,7 +12,6 @@ const userReducer = (state = initState, action) => {
     case 'DELETE_USER':
       let users = state.users;
       users = users.filter(item => item.id !== action.payload.id);
-      console.log({ ...state, users })
       return {
         ...state, users
       }

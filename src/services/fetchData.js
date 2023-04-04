@@ -5,12 +5,14 @@ import moment from "moment/moment";
 const useFetch = (url) => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [isError, setIsError] = useState(false)
+    const [isError, setIsError] = useState(false);
+
 
     useEffect(() => {
+        const ourRequest = axios.CancelToken.source();
         async function fetchData() {
             try {
-                let res = await axios.get(url)
+                let res = await axios.get(url, { cancelToken: ourRequest.token })
                 let data = res && res.data ? res.data : [];
                 if (data && data.length > 0) {
                     data.map(item => {
@@ -23,14 +25,26 @@ const useFetch = (url) => {
                 setIsError(false);
             }
             catch (e) {
-                setLoading(false);
-                setIsError(true);
+                if(axios.isCancel(e)){
+                    console.log('Request error: ', e.message)
+                }else{
+                    setLoading(false);
+                    setIsError(true);
+                }
             }
         }
-        fetchData();
+
+        setTimeout(() => {
+            fetchData();
+        }, 3000)
+
+
+        return () => {
+            ourRequest.cancel('Operation canceled by the user.')
+        }
     }, [url])
 
-    return{
+    return {
         data, isError, loading
     }
 }

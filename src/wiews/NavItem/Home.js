@@ -7,7 +7,6 @@ import React from "react";
 function Home(){
     const dispatch = useDispatch();
     const listUsersRedux = useSelector((state) => state.user.users);
-    console.log(listUsersRedux);
     const handleDeleteUser = (user) => {
         dispatch(deleteUser(user))
     }
