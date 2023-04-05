@@ -25,18 +25,17 @@ const useFetch = (url, isCovid) => {
                 setIsError(false);
             }
             catch (e) {
-                if(axios.isCancel(e)){
+                if (axios.isCancel(e)) {
                     console.log('Request error: ', e.message)
-                }else{
+                } else {
                     setLoading(false);
                     setIsError(true);
                 }
             }
         }
 
-        setTimeout(() => {
-            fetchData();
-        }, 3000)
+
+        fetchData();
 
 
         return () => {
