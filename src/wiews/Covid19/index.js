@@ -4,7 +4,7 @@ import useFetch from "../../services/fetchData";
 
 function Covid19() {
 
-    const { data: dataCovid, isError, loading} = useFetch('https://api.covid19api.com/country/vietnam?from=2021-10-01T00%3A00%3A00Z&to=2021-10-20T00%3A00%3A00Z');
+    const { data: dataCovid, isError, loading} = useFetch('https://api.covid19api.com/country/vietnam?from=2021-10-01T00%3A00%3A00Z&to=2021-10-20T00%3A00%3A00Z', true);
 
     return (
         <>
