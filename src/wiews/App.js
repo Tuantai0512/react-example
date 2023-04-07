@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import './Todos/Todolist'
 /* import Todolist from './Todos/Todolist'; */
 import { ToastContainer } from 'react-toastify';

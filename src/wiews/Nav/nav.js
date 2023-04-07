@@ -29,7 +29,6 @@ class Nav extends React.Component{
                     <Route path="/covid-19" element={<Covid19/>}/>
                     <Route path="/blog" element={<Blog/>}/>
                     <Route path="/blog/:id" element={<BlogDetail/>}/>
-                    <Route path="/blog/add-new" element={<AddNewBlog/>}/>
                 </Routes>
             </>
         )
