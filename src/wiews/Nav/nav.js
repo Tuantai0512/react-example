@@ -8,7 +8,7 @@ import DetailUser from "../Users/DetailUser";
 import Covid19 from "../Covid19";
 import Blog from "../Blog"
 import BlogDetail from "../BlogDetail";
-import AddNewBlog from "../AddNewBlog";
+import NotFound from "../Page404";
 
 class Nav extends React.Component{
     render(){
@@ -29,6 +29,7 @@ class Nav extends React.Component{
                     <Route path="/covid-19" element={<Covid19/>}/>
                     <Route path="/blog" element={<Blog/>}/>
                     <Route path="/blog/:id" element={<BlogDetail/>}/>
+                    <Route path="*" element={<NotFound/>}/>
                 </Routes>
             </>
         )

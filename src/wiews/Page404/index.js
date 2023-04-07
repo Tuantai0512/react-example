@@ -1,0 +1,20 @@
+import "../AddNewBlog/style.scss";
+import { useNavigate } from "react-router-dom";
+
+function NotFound() {
+    let history = useNavigate();
+
+    const handleClickBtn = () => {
+        history('/')
+    }
+
+    return (
+        <div className="not-found-container">
+            <h4>This Page Isn't Available</h4>
+            <h5>The link may be broken, or the page may have been removed. Check to see if the link you're trying to open is correct.</h5>
+            <button class="btn btn-primary" onClick={handleClickBtn}>Go to HomePage</button>
+        </div>
+    )
+}
+
+export default NotFound
