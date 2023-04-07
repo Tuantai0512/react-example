@@ -15,7 +15,6 @@ function BlogDetail() {
             <button onClick={handleBack}>&lt;--  Back</button>
             <h2>This is blog Detail page by id = {id}</h2>
             {dataBlog &&
-
                 <>
                     <h5>{dataBlog.title}</h5>
                     <p>{dataBlog.body}</p>

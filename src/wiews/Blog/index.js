@@ -13,6 +13,7 @@ function Blog() {
 
     return (
         <>
+            <button className="Add-btn"><Link to={'/blog/add-new'}>+ Add new</Link></button>
             <h2>This is blog page</h2>
             <div className="blogs-container">
                 {newData && newData.length > 0 && newData.map((item) => {
