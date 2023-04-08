@@ -5,11 +5,12 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Nav from './Nav/nav';
 import { connect } from 'react-redux';
-
+import RoutesSite from '../routes/routes';
 function App() {
   return (
     <div className="App">
       <Nav/>    
+      <RoutesSite/>
       <ToastContainer
         position="top-right"
         autoClose={5000}
