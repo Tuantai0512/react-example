@@ -9,6 +9,7 @@ import Covid19 from "../Covid19";
 import Blog from "../Blog"
 import BlogDetail from "../BlogDetail";
 import NotFound from "../Page404";
+import SearchYoutube from "../SearchYoutube";
 
 class Nav extends React.Component{
     render(){
@@ -20,6 +21,7 @@ class Nav extends React.Component{
                     <li><NavLink to="/users">Users</NavLink></li>
                     <li><NavLink to="/covid-19">Covid-19</NavLink></li>
                     <li><NavLink to="/blog">Blog</NavLink></li>
+                    <li><NavLink to="/search">Search</NavLink></li>
                 </ul>
                 <Routes>
                     <Route path="/" element={<Home/>}/>
@@ -29,6 +31,7 @@ class Nav extends React.Component{
                     <Route path="/covid-19" element={<Covid19/>}/>
                     <Route path="/blog" element={<Blog/>}/>
                     <Route path="/blog/:id" element={<BlogDetail/>}/>
+                    <Route path="/search" element={<SearchYoutube/>}/>
                     <Route path="*" element={<NotFound/>}/>
                 </Routes>
             </>
